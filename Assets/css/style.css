@@ -7,6 +7,7 @@ body {
 
 textarea{
   background:transparent;
+  font-weight: bold;
   border: none;
   resize: none;
   color: #000000;
@@ -32,17 +33,19 @@ textarea{
 }
 .time-block{
   text-align: center;
+  font-weight: bold;
   border-radius: 15px;
+  color: #000000;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid rgb(92, 80, 80);;
 }
 
 .hour {
-  background-color: #FF7A63;
+  background-color: #e4b9d6;
   color: #275244;
   border-top: 1px dashed #275244;
   border-top-left-radius: 9px;
@@ -55,7 +58,6 @@ textarea{
 }
 
 .present {
-  background-color: #ff6961;
   color: white;
 }
 
@@ -63,8 +65,6 @@ textarea{
   background-color: #77dd77;
   color:transparent;
 }
-
-  
 
 
 .saveBtn {
@@ -80,14 +80,10 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-
 @media only screen and (max-width: 500px) {
   .planner-container {
     padding: auto -50px;
     margin: 0px 0px;
   }
 }
-#clear {
-  background-color: #4393ee;
-  color: rgb(252, 250, 250);
-}
+

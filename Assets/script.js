@@ -33,3 +33,24 @@ saveBtn.on("click", function () {
     localStorage.setItem(time, schedule);
 });
 
+
+pastPresentFuture();
+$(document).ready(function(){
+    let time= moment().format("h:mm:ss");
+    let timeSplit = time.split(":"); 
+    let minutesToRefresh= 59 - parseInt(timeSplit[1]); 
+    let secondsToRefresh= 60- parseInt(timeSplit[2]); 
+    let timeToRefresh= minutesToRefresh*60 + secondsToRefresh; 
+    let secondsElapsed=0; 
+        secondsElapsed++
+        if (secondsElapsed === timeToRefresh){
+            console.log(moment()); 
+            let isReloading= confirm("Would you like to reload the page?"); 
+            if (isReloading) {
+                window.location.reload(true);
+            } else {
+                alert("Automatic hourly reloading will no longer occur unless you reload the page."); 
+            }
+        }
+    },1000);
+
