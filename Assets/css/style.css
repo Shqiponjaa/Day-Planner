@@ -36,10 +36,9 @@ textarea{
 }
 
 .row {
-    white-space: pre-wrap;
-    height: 80px;
-    border-top: 1px solid white;;
-
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
 }
 
 .hour {
@@ -62,22 +61,18 @@ textarea{
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color:transparent;
 }
-button, input, optgroup, select, textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-padding: 20px;}
+
   
+
 
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #3817db;
-  color: #FFFAF0;
+  background-color: #06AED5;
+  color: white;
 }
 
 .saveBtn i:hover {
@@ -91,4 +86,8 @@ padding: 20px;}
     padding: auto -50px;
     margin: 0px 0px;
   }
+}
+#clear {
+  background-color: #4393ee;
+  color: rgb(252, 250, 250);
 }
