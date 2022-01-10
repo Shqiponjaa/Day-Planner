@@ -1,48 +1,57 @@
-var today = moment().format("dddd, MMMM Do");
 
-var now = moment().format("H A");
-
-/* planWorkday entries for each hour of the workday */
-var scheduleDay = [
-{ time: "12 PM", event: "" },
-{ time: "1 PM", event: "" },
-{ time: "2 PM", event: "" },
-{ time: "3 PM", event: "" },
- { time: "4 PM", event: "" },
- { time: "6 PM", event: "" },
- { time: "7 PM", event: "" },
- { time: "8 PM", event: "" },
-];
-
-
-var workEvents = JSON.parse(localStorage.getItem("Day"));
-if (workEvents) {
-  scheduleDay = workEvents;
-}
-
-
-
-
-
-
-//save events
-
-$(".saveBtn").on("click", function() {
-	var  = parseInt(
-		$(this)
-			.closest(".time-block")
-			.attr("id")
-	);
-	var userEntry = $.trim(
-		$(this)
-			.parent()
-			.siblings("textarea")
-			.val()
-	);
-	scheduleDay[blockID].event = userEntry;
-
-
-	//Set local storage 
-	localStorage.setItem("Day", JSON.stringify(scheduleDay));
-});
     
+   
+    function updateOutput8() {
+      localStorage.setItem("4-PM", input_textarea8.value);
+    }
+  
+    var input_textarea9 = document.querySelector("#toDo9");
+    var save_button9 = document.querySelector("#saveThis9");
+    input_textarea9.value = localStorage.getItem("5-PM");
+    save_button9.addEventListener("click", updateOutput9);
+  
+    function updateOutput9() {
+      localStorage.setItem("5-PM", input_textarea9.value);
+    }
+    var current = new Date().getHours();
+    function displayColor() {
+        if (current > 12) {
+            $("#toDo5").addClass("past");
+          } else if (current >= 13 && current < 14) {
+            $("#toDo5").addClass("present");
+          } else if (current < 12) {
+            $("#toDo5").addClass("future");
+          }
+      if (current > 13) {
+        $("#toDo5").addClass("past");
+      } else if (current >= 13 && current < 14) {
+        $("#toDo5").addClass("present");
+      } else if (current < 13) {
+        $("#toDo5").addClass("future");
+      }
+      if (current > 14) {
+        $("#toDo6").addClass("past");
+      } else if (current >= 14 && current < 15) {
+        $("#toDo6").addClass("present");
+      } else if (current < 14) {
+        $("#toDo6").addClass("future");
+      }
+      if (current > 15) {
+        $("#toDo7").addClass("past");
+      } else if (current >= 15 && current < 16) {
+        $("#toDo7").addClass("present");
+      } else if (current < 15) {
+        $("#toDo7").addClass("future");
+      }
+      if (current > 16) {
+        $("#toDo8").addClass("past");
+      } else if (current >= 16 && current < 17) {
+        $("#toDo8").addClass("present");
+      } else if (current < 16) {
+        $("#toDo8").addClass("future");
+      }
+     
+      }
+    }
+    displayColor();
+  });
