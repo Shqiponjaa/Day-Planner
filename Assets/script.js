@@ -31,18 +31,16 @@ saveBtn.on("click", function () {
     var schedule = $(this).siblings(".schedule").val();
     localStorage.setItem(time, schedule);
 });
+let savedDayPlans;
+let locationArr = []; 
 
-function clearEvent(isClear,index,location,buttonEl){
-    if (isClear) {
-        alert("You cleared this event");
-        removeEvent(index); 
-        buttonEl.attr("data-event", "none");  
-        localStorage.setItem("savedDayPlans", JSON.stringify(savedDayPlans));
-    }  else {
-        location.val(savedDayPlans[index].event); 
-        alert("Event was not cleared"); 
-    } 
-    console.log("The data-event is set to "+buttonEl.attr("data-event") + " at " +buttonEl.siblings("p").text()); 
-}
+$("#clear").on("click",function(){
+    if(confirm("Are you sure you want to clear all saved events?")){
+       clearLocalStorage(); 
+       $(".time-block").find("textarea").val("");
+       $(".time-block").find("button").attr("data-event", "none"); 
+       locationArr=[];   
+      }
+})
 
     
