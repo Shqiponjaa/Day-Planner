@@ -34,15 +34,9 @@ saveBtn.on("click", function () {
 });
 
 
-
-function clearLocalStorage() {
-    savedDayPlans=[]; 
-    localStorage.setItem("savedDayPlans", savedDayPlans); 
-}
-
 $("#clear").on("click",function(){
     if(confirm("Are you sure you want to clear all saved events?")){
-       clearLocalStorage(); 
+localStorage.clear()
        $(".time-block").find("textarea").val("");
        $(".time-block").find("button").attr("data-event", "none"); 
        locationArr=[];   
