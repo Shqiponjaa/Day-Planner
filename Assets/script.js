@@ -13,7 +13,7 @@ function setPlanner() {
 
     $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 
-    $(".time-block").each(function () {
+    $(".time-block").each(function () { 
         var id = $(this).attr("id");
         var schedule = localStorage.getItem(id);
 
@@ -29,28 +29,20 @@ var saveBtn = $(".saveBtn");
 saveBtn.on("click", function () {
     var time = $(this).parent().attr("id");
     var schedule = $(this).siblings(".schedule").val();
-
     localStorage.setItem(time, schedule);
 });
 
+function clearEvent(isClear,index,location,buttonEl){
+    if (isClear) {
+        alert("You cleared this event");
+        removeEvent(index); 
+        buttonEl.attr("data-event", "none");  
+        localStorage.setItem("savedDayPlans", JSON.stringify(savedDayPlans));
+    }  else {
+        location.val(savedDayPlans[index].event); 
+        alert("Event was not cleared"); 
+    } 
+    console.log("The data-event is set to "+buttonEl.attr("data-event") + " at " +buttonEl.siblings("p").text()); 
+}
 
-pastPresentFuture();
-$(document).ready(function(){
-    let time= moment().format("h:mm:ss");
-    let timeSplit = time.split(":"); 
-    let minutesToRefresh= 59 - parseInt(timeSplit[1]); 
-    let secondsToRefresh= 60- parseInt(timeSplit[2]); 
-    let timeToRefresh= minutesToRefresh*60 + secondsToRefresh; 
-    let secondsElapsed=0; 
-        secondsElapsed++
-        if (secondsElapsed === timeToRefresh){
-            console.log(moment()); 
-            let isReloading= confirm("Would you like to reload the page?"); 
-            if (isReloading) {
-                window.location.reload(true);
-            } else {
-                alert("Automatic hourly reloading will no longer occur unless you reload the page."); 
-            }
-        }
-    },1000);
-
+    

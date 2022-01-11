@@ -25,6 +25,9 @@
               <div class="col-1 hour">9 AM</div>
               <textarea class="col-10 schedule"></textarea>
               <button class="col-1 saveBtn">Save</button>
+          
+                Do you want to save
+              </div>
             </div>
             <div class="row time-block" id="10">
               <div class="col-1 hour">10 AM</div>
@@ -67,10 +70,15 @@
               <button class="col-1 saveBtn">Save</button>
             </div>
           </div>
-        <div class="container-fluid">
-            <footer class="row">
-              <br><br>
-            </footer>
+          <div class="row m-5">
+            <h2 class="col-md-9 text-center">Clear All Events?</h2>
+            <button class="col-md-2 btn btn-warning" id="clear">Clear</button>
+          </div>
+      
+          <div class="row m-5">
+            <h2 class="col-md-9 text-center">Review All Unsaved Changes?</h2>
+            <button class="col-md-2 btn btn-success" id="saveAll">Review</button>
+          </div>
           </div>
         
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
