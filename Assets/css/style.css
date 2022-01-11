@@ -14,14 +14,9 @@ textarea{
   border-left: 1px solid black;
   padding: 10px;}
 
-
-.jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
-}
+  .jumbotron{
+    text-align: center;
+  }
 
 .description{
   white-space: pre-wrap;
@@ -68,7 +63,7 @@ textarea{
 
 
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: 1px solid rgb(19, 6, 6);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;

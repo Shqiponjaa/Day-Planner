@@ -1,3 +1,4 @@
+
 var hour9 = $("#9");
 var hour10 = $("#10");
 var hour11 = $("#11");
@@ -31,8 +32,13 @@ saveBtn.on("click", function () {
     var schedule = $(this).siblings(".schedule").val();
     localStorage.setItem(time, schedule);
 });
-let savedDayPlans;
-let locationArr = []; 
+
+
+
+function clearLocalStorage() {
+    savedDayPlans=[]; 
+    localStorage.setItem("savedDayPlans", savedDayPlans); 
+}
 
 $("#clear").on("click",function(){
     if(confirm("Are you sure you want to clear all saved events?")){
@@ -43,4 +49,4 @@ $("#clear").on("click",function(){
       }
 })
 
-    
+
